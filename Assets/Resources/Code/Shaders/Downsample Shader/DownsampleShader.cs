@@ -6,7 +6,6 @@ public class DownsampleShader : MonoBehaviour
 {
 
     [SerializeField] private RenderTexture renderTexture;
-    [SerializeField] private float downScale;
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
