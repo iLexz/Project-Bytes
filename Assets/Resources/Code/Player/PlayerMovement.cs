@@ -53,8 +53,8 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		Movement();
 		ApplyGravity();
-		Sprint();
 		Crouch();
+		Sprint();
 	}
 
 	private void Movement()
@@ -62,9 +62,9 @@ public class PlayerMovement : MonoBehaviour {
 		moveFB = Input.GetAxis("Vertical") * speedFB;
 		moveLR = Input.GetAxis("Horizontal") * speedLR;
 
-		rotY -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
+        rotY -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
 		rotX = Input.GetAxisRaw("Mouse X") * mouseSensitivity;
-		
+
 		Vector3 movement = new Vector3(moveLR, verticalVelocity, moveFB);
 
 		transform.Rotate(0, rotX, 0);
@@ -144,7 +144,7 @@ public class PlayerMovement : MonoBehaviour {
 				speedFB = crouchedSpeedFB;
 				speedLR = crouchedSpeedLR;
 
-				if (isSprinting)
+                if (isSprinting)
 				{
 					character.height = 2;
 					speedFB = sprintingSpeedFB;
